@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { Provider } from "react-redux";
+import Head from "./Component/Head";
+import Body from "./Component/Body";
+import store from "./utils/store";
+import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import MainContainer from "./Component/MainContainer";
+import WatchPage from "./Component/WatchPage";
+import VideoContainer from "./Component/VideoContainer";
+import SearchPage from "./Component/SearchPage";
+import SideBar from "./Component/SideBar";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Head />
+      <div className="flex">
+        <SideBar />
+        <Outlet />
+      </div>
+    </>
   );
 }
 
